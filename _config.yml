@@ -1,3 +1,4 @@
-theme: bulma-clean-theme
+#theme: bulma-clean-theme
+remote_theme: chrisrhymes/bulma-clean-theme
 title: Stripe Payment Link Generator
 show_downloads: true
