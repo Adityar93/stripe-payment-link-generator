@@ -1,0 +1,46 @@
+---
+layout: default
+title: Stripe Payment Link Generator
+subtitle: An easy way to generate payment links for Stripe
+---
+<script>
+    function check()
+    {
+        if(document.getElementById('productId').value.startsWith("prod_") & document.getElementById('productId').value.startsWith("pk_")){
+            document.getElementById('link').innerHTML="abc"+document.getElementById('productId').value
+        }else if(!document.getElementById('productId').value.startsWith("prod_")){
+            document.getElementById('link').innerHTML="Cannot generate link, does your product id begin with prod_"
+        }else{
+            document.getElementById('link').innerHTML="Cannot generate link, does your publishable key begin with pk_"
+        }
+    }
+</script>
+<div class="content">
+    <h1>Step 1 : Create a Product</h1>
+
+<p>Create a Product on your <a href="https://dashboard.stripe.com/products/create">Stripe Dashboard</a>. You can optionally add an image of the product that will be visible to your end customers when they click the payment link.</p>
+
+<h1>Step 2 : Retrieve your Product ID.</h1>
+
+<p> View all your Products on Stripe <a href="https://dashboard.stripe.com/products"> here</a>. Select the product for which you'd like to generate a payment link. The Product ID will be visible just below the description</p>
+<div class="column is-12"></div>
+<figure class="image is-6by3">
+    <img src="/assets/images/prod_id.png">
+</figure>
+</12>
+<p>Paste your product ID (prod_abcd1234) in the form at the bottom of the page and come back for Step 3. </p>
+
+<h1>Step 3 : Retrieve your Publishable Key.</h1>
+<p>Your Stripe keys are available <a href="https://dashboard.stripe.com/apikeys"> here</a>. Only copy your Publishable key and paste it in the form at the bottom of the page and come back for Step 4. Do not share your Secret Key with anyone!!</p>
+
+<h1>Step 4 : Whitelist this website</h1>
+<p>Navigate to your <a href="https://dashboard.stripe.com/settings/checkout">Checkout Settings</a> 
+    <br/>1. Enable Checkout client-only integration by clicking the slider
+<br/>2. Add {{base}} </p>
+
+
+<h1>Step 5 : Generate your Payment Link</h1>
+
+Your Product ID : <input id="productId" placeholder="prod_abcd1234" onchange=check() oninput=check()>
+Your Publishable key ID : <input id="publicKey" placeholder="pk_live_abcd1234" onchange=check()>
+Your Link : <div id="link"></div>

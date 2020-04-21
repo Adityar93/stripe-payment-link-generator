@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stripe Payment Link Generator - Stripe Payment Link Generator</title>
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png"
+           href="/favicon.png" 
+    />
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Stripe Payment Link Generator | The demo site for Bulma Clean Theme, made for Jekyll and GitHub pages websites</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Stripe Payment Link Generator" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The demo site for Bulma Clean Theme, made for Jekyll and GitHub pages websites" />
+<meta property="og:description" content="The demo site for Bulma Clean Theme, made for Jekyll and GitHub pages websites" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Stripe Payment Link Generator" />
+<script type="application/ld+json">
+{"@type":"WebSite","url":"http://localhost:4000/","name":"Stripe Payment Link Generator","headline":"Stripe Payment Link Generator","description":"The demo site for Bulma Clean Theme, made for Jekyll and GitHub pages websites","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --></head>
+
+  <body>
+    
+<nav class="navbar is-primary" >
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+                Stripe Payment Link Generator
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item is-active">Home</a>
+                
+            </div>
+
+            <div class="navbar-end">
+                
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-medium  is-bold is-primary" >
+    <div class="hero-body ">
+        <div class="container">
+            <p class="title is-2">Stripe Payment Link Generator</p>
+            <p class="subtitle is-3">An easy way to generate payment links for Stripe</p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    <script>
+    function check()
+    {
+        if(document.getElementById('productId').value.startsWith("prod_") & document.getElementById('productId').value.startsWith("pk_")){
+            document.getElementById('link').innerHTML="abc"+document.getElementById('productId').value
+        }else if(!document.getElementById('productId').value.startsWith("prod_")){
+            document.getElementById('link').innerHTML="Cannot generate link, does your product id begin with prod_"
+        }else{
+            document.getElementById('link').innerHTML="Cannot generate link, does your publishable key begin with pk_"
+        }
+    }
+</script>
+<div class="content">
+    <h1>Step 1 : Create a Product</h1>
+
+<p>Create a Product on your <a href="https://dashboard.stripe.com/products/create">Stripe Dashboard</a>. You can optionally add an image of the product that will be visible to your end customers when they click the payment link.</p>
+
+<h1>Step 2 : Retrieve your Product ID.</h1>
+
+<p> View all your Products on Stripe <a href="https://dashboard.stripe.com/products"> here</a>. Select the product for which you'd like to generate a payment link. The Product ID will be visible just below the description</p>
+<div class="column is-12"></div>
+<figure class="image is-6by3">
+    <img src="/assets/images/prod_id.png">
+</figure>
+</12>
+<p>Paste your product ID (prod_abcd1234) in the form at the bottom of the page and come back for Step 3. </p>
+
+<h1>Step 3 : Retrieve your Publishable Key.</h1>
+<p>Your Stripe keys are available <a href="https://dashboard.stripe.com/apikeys"> here</a>. Only copy your Publishable key and paste it in the form at the bottom of the page and come back for Step 4. Do not share your Secret Key with anyone!!</p>
+
+<h1>Step 4 : Whitelist this website</h1>
+<p>Navigate to your <a href="https://dashboard.stripe.com/settings/checkout">Checkout Settings</a> 
+    <br/>1. Enable Checkout client-only integration by clicking the slider
+<br/>2. Add  </p>
+
+
+<h1>Step 5 : Generate your Payment Link</h1>
+
+Your Product ID : <input id="productId" placeholder="prod_abcd1234" onchange=check() oninput=check()>
+Your Publishable key ID : <input id="publicKey" placeholder="pk_live_abcd1234" onchange=check()>
+Your Link : <div id="link"></div>
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+
+        <div class="content is-small has-text-centered">
+            <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+        </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+</html>
+
