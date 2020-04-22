@@ -1,0 +1,28 @@
+---
+layout: default
+title: Redirecting to your Checkout Page
+
+---
+<script src="https://js.stripe.com/v3"></script>
+
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const pkey= urlParams.get("pkey")
+    const sku= urlParams.get("sku")
+    console.log(pkey)
+    console.log(sku)
+    var stripe = Stripe(pkey);
+    stripe.redirectToCheckout({
+      items: [{sku: sku, quantity: 1}],
+
+      // Do not rely on the redirect to the successUrl for fulfilling
+      // purchases, customers may not always reach the success_url after
+      // a successful payment.
+      // Instead use one of the strategies described in
+      // https://stripe.com/docs/payments/checkout/fulfillment
+      successUrl: 'https://your-website.com/success',
+      cancelUrl: 'https://your-website.com/canceled',
+    })
+
+</script>
